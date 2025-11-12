@@ -2,17 +2,17 @@
 title: "Inflation Data"
 author: "Aaron Peikert"
 date: "`r Sys.Date()`"
-output: pdf_document
+output:
+  pdf_document: default
+  html_document: default
 repro:
   packages:
-    - here
-    - tidyverse
-    - lubridate
-    - aaronpeikert/repro@fc7e884
-  scripts:
-    - R/prepare_inflation.R
-  data:
-    - data/raw/inflation.rds
+  - here
+  - tidyverse
+  - lubridate
+  - aaronpeikert/repro@fc7e884
+  scripts: R/prepare_inflation.R
+  data: data/raw/inflation.rds
 ---
 
 ```{r setup, include=FALSE}
@@ -37,6 +37,16 @@ I quote:
 # note that they must be empty and the names must correspond
 ```
 
+```{r}
+# use a function without loading the package:
+# package::function
+usethis::use_git_config(
+  user.name = "Jesusssss", # <-- change to your name
+  user.email = "jesusmc@stanford.edu", # <-- and your email
+  init.defaultBranch = "main") # <-- not necessary but kinder than 'master'
+```
+
+
 For this dataset the Bank of England asked `r prettyNum(nrow(inflation), big.mark = ".", decimal.mark = ",")` people for their opinion on the perceived and expected inflation.
 The survey has run quarterly since `r min(inflation$year)`.
 
@@ -50,6 +60,7 @@ inflation %>%
   ungroup() %>% 
   ggplot() +
   geom_line(aes(date, value, color = name)) +
+  theme(legend.position = c(.1, .9)) +
   NULL
 ```
 
@@ -62,3 +73,18 @@ with(mtcars, plot(hp, mpg))
 Inline code is for single numbers/short text:
 
 We have `32` cars.
++++
+
+This is **bold**, while this is *italic*.
+
+
+```{r}
+usethis::use_git()
+```
+
+
+
+
+
+
+
