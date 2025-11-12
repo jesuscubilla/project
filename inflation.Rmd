@@ -60,7 +60,7 @@ inflation %>%
   ungroup() %>% 
   ggplot() +
   geom_line(aes(date, value, color = name)) +
-  theme(legend.position = c(.2, .9)) +
+  theme(legend.position = c(.1, .9)) +
   NULL
 ```
 
@@ -78,10 +78,6 @@ We have `32` cars.
 This is **bold**, while this is *italic*.
 
 
-```{r}
-usethis::use_git()
-usethis::create_github_token(description = "Token for Repro Workshop 2025")
-```
 
 
 
