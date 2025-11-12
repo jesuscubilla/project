@@ -78,6 +78,9 @@ We have `32` cars.
 This is **bold**, while this is *italic*.
 
 
+```{r}
+usethis::use_github()
+```
 
 
 
