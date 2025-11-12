@@ -60,7 +60,7 @@ inflation %>%
   ungroup() %>% 
   ggplot() +
   geom_line(aes(date, value, color = name)) +
-  theme(legend.position = c(.4, .9)) +
+  theme(legend.position = c(.5, .10)) +
   NULL
 ```
 
@@ -78,9 +78,7 @@ We have `32` cars.
 This is **bold**, while this is *italic*.
 
 
-```{r}
-usethis::use_github()
-```
+
 
 
 
