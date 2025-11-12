@@ -84,6 +84,7 @@ This is **bold**, while this is *italic*.
 
 ```{r}
 usethis::use_git()
+usethis::create_github_token(description = "Token for Repro Workshop 2025")
 ```
 
 
